@@ -1,0 +1,3 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Supereggcat/ecommerce-deep-agent-ui.git

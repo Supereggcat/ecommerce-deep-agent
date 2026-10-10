@@ -51,6 +51,7 @@
 ├── prompt/prompts.yml     # 主/子智能体提示词与描述
 ├── tools/                 # 工具集（搜索 / 数据库 / 知识库 / 文档生成 / 文件读取）
 ├── utils/                 # 路径解析、Word→PDF 转换、RAGFlow 配置加载
+├── frontend/              # 前端（git submodule → ecommerce-deep-agent-ui）
 ├── requirements.txt
 ├── .env.example
 └── output/                # 运行期生成（已 gitignore）
@@ -118,6 +119,25 @@ WebSocket 事件体格式：
 }
 ```
 
+## 前端
+
+前端是一个独立的 Vue 3 + Vite 项目（对话界面、执行过程可视化、会话文件面板），
+以 **git submodule** 的形式挂在 `frontend/` 目录。
+
+```bash
+# 克隆时带上子模块
+git clone --recurse-submodules https://github.com/Supereggcat/ecommerce-deep-agent.git
+# 已经克隆但没带子模块
+git submodule update --init --recursive
+
+cd frontend
+npm install
+npm run dev            # http://localhost:5173
+```
+
+前端仓库：<https://github.com/Supereggcat/ecommerce-deep-agent-ui>
+
 ## 技术栈
 
 DeepAgents · LangGraph · LangChain · FastAPI · WebSocket · MySQL · Tavily · RAGFlow · python-docx / pypdf / pandas / pywin32
+前端：Vue 3 · Vite · TypeScript · marked
